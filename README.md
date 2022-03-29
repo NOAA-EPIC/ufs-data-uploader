@@ -1,6 +1,6 @@
 
 <h1 align="center">
-Cloud Data Uploader for UFS Datasets
+Data Uploader for UFS Datasets to Cloud Data Storage
 </h1>
 
 <p align="center">
