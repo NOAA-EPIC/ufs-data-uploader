@@ -5,7 +5,7 @@ Data Uploader for
 </h1>
 
 <p align="center">
-    <img src="images/header.png" width="400" height="150">
+    <img src="images/header.png" width="500" height="200">
 </p>
 
 <h5 align="center">
