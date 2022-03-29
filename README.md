@@ -63,7 +63,7 @@ Within the download, you will find the following directories and files:
     > .py
     > .py
 * List of Dependencies: 
-    > #####env.yml
+    > cloud_xfer_env.yml
 
 # Documentation
 
