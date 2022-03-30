@@ -27,14 +27,13 @@ class TransferSpecificData():
     
         # Select timestamp dataset to transfer from RDHPCS on-disk to cloud
         self.input_ts, self.bl_ts, self.ww3_input_ts, self.bmic_ts = input_ts, bl_ts, ww3_input_ts, bmic_ts
-        filter2specific_ts_datasets = GetTimestampData(self.orion_rt_data_dir, None).get_specific_ts_files(input_ts, bl_ts, ww3_input_ts, bmic_ts)
+        self.filter2specific_ts_datasets = GetTimestampData(self.orion_rt_data_dir, None).get_specific_ts_files(input_ts, bl_ts, ww3_input_ts, bmic_ts)
 
         # Upload datasets requested by user.
-        UploadData(self.orion_rt_data_dir, filter2specific_ts_datasets, use_bucket='rt').upload_files2cloud()
-        
-        #print(filter2specific_ts_datasets.keys())
-        #print(filter2specific_ts_datasets)
-        #print("Reach to upload")
+        UploadData(self.orion_rt_data_dir, self.filter2specific_ts_datasets, use_bucket='rt').upload_files2cloud()
+        #print("Reach to upload")        
+        #print(self.filter2specific_ts_datasets.keys())
+        #print(self.filter2specific_ts_datasets)
     
         
 if __name__ == '__main__': 

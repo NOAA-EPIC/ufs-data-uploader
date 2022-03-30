@@ -29,6 +29,9 @@ class TransferBotData():
     
         # Upload datasets tracked by data tracker bot.
         UploadData(self.orion_rt_data_dir, self.filter2tracker_ts_datasets, use_bucket='rt').upload_files2cloud()
+        #print("Reach to upload")        
+        #print(self.filter2tracker_ts_datasets.keys())
+        #print(self.filter2tracker_ts_datasets)
         
         
 if __name__ == '__main__': 
