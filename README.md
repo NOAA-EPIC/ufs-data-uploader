@@ -45,6 +45,7 @@ __Future Capabilities:__
 
 # Prerequisites
 * Python 3.9
+* Setting up AWS CLI configurations for uploading to Cloud.
 
 # Dataset
 * N/A
