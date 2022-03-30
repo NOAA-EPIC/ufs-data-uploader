@@ -18,7 +18,7 @@ class TransferSpecificData():
         """
     
         # Establish locality of where the datasets will be sourced.
-        self.linked_home_dir = "/home/schin/work"
+        self.linked_home_dir =  linked_home_dir
 
         if platform == "orion":
             self.orion_rt_data_dir = self.linked_home_dir + "/noaa/nems/emc.nemspara/RT/NEMSfv3gfs/"
