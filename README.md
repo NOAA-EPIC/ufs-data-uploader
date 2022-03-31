@@ -11,7 +11,7 @@ Data Uploader for
 
 <h5 align="center">
     
-[Prerequisites](#Prerequisites) • [Dataset](#Dataset) • [Quick Start](#Quick-Start) • [Status](#Status)
+[Prerequisites](#Prerequisites) • [Dataset](#Dataset) • [Quick Start](#Quick-Start) • [Environment Setup](#Environment-Setup) • [Status](#Status)
  • [What's Included](#What's-Included) • [Documentation](#Documentation) • [References](#Reference(s))
 
 </h5>
@@ -63,7 +63,7 @@ The program can be used as a skeletal framework for transferring future datasets
 * [Status](#Status)
 * [What's Included](#What's-Included)
 * [Documentation](#Documentation)
-* [References](#Creator(s))
+* [References](#Reference(s))
 
 # Prerequisites
 * Python 3.9
