@@ -24,16 +24,16 @@ The purpose of this program is to transfer the input and baseline datasets resid
 
 According to Amazon AWS, the following conditions need to be considered when transferring data to cloud data storage:
 
-> Largest object that can be uploaded in a single PUT is 5 GB.
-> Individual Amazon S3 objects can range in size from a minimum of 0 bytes to a maximum of 5 TB.
-> For objects larger than 100 MB, Amazon recommends using the Multipart Upload capability.
-> The total volume of data in a cloud data storage bucket are unlimited.
+* Largest object that can be uploaded in a single PUT is 5 GB.
+* Individual Amazon S3 objects can range in size from a minimum of 0 bytes to a maximum of 5 TB.
+* For objects larger than 100 MB, Amazon recommends using the Multipart Upload capability.
+* The total volume of data in a cloud data storage bucket are unlimited.
 
 Tools which could be be utilized to perform data transferring & partitioning (Multipart Upload/Download) are:
 
-> AWS SDK
-> AWS CLI
-> AWS S3 REST API
+* AWS SDK
+* AWS CLI
+* AWS S3 REST API
 
 All of the AWS provided tools are built on Boto3.
 
@@ -69,7 +69,7 @@ The program can be used as a skeletal framework for transferring future datasets
 * Python 3.9
 * Setting up AWS CLI configurations for uploading to Cloud.
 * Setting up conda environment w/in RDHPCS.
-    > Refer to [Environment Setup](#Environment-Setup)
+    * Refer to [Environment Setup](#Environment-Setup)
 
 # Dataset
 * N/A
@@ -87,7 +87,7 @@ Check integrity downloaded file with SHA-256:
 sha256sum Miniconda3-py39_4.9.2-Linux-x86_64.sh
 Reference SHA256 hash in following link: https://docs.conda.io/en/latest/miniconda.html
 
-Install Miniconda in Linux:
+## Install Miniconda in Linux:
 
 bash Miniconda3-py39_4.9.2-Linux-x86_64.sh
 Next, Miniconda installer will prompt where do you want to install Miniconda. Press ENTER to accept the default install location i.e. your $HOME directory. If you don't want to install in the default location, press CTRL+C to cancel the installation or mention an alternate installation directory. If you've chosen the default location, the installer will display “PREFIX=/var/home//miniconda3” and continue the installation.
@@ -113,7 +113,7 @@ To create a new environment from an existing YAML file (if a YAML file is provid
 conda env create -f environment.yml
 *Note: A .yml file is a text file that contains a list of dependencies, which channels a list for installing dependencies for the given conda environment. For the code to utilize the dependencies, you will need to be in the directory where the environment.yml file lives.
 
-Activate the new environment via:
+## Activate the new environment via:
 conda activate [Name of your conda environment you wish to activate]
 Verify that the new environment was installed correctly via:
 conda info --env
@@ -122,7 +122,8 @@ conda info --env
 From this point on, must activate conda environment prior to .py script(s) or jupyter notebooks execution using the following command: conda activate
 To deactivate a conda environment:
 conda deactivate
-Link Home Directory to Dataset Location on RDHPCS Platform
+
+## Link Home Directory to Dataset Location on RDHPCS Platform
 Unfortunately, there is no way to navigate to the /work/ filesystem from within the Jupyter interface. The best way to workaround is to create a symbolic link in your home folder that will take you to the /work/ filesystem. Run the following command from a linux terminal on Orion to create the link:
 
 ln -s /work /home/[Your user account name]/work
@@ -138,7 +139,7 @@ Set the following configurations to run Jupyter:
 Additonal Information
 To create a .yml file, execute the following commands:
 
-Activate the environment to export:
+## Activate the environment to export:
 
 conda activate myenv
 Export your active environment to a new file:
@@ -152,21 +153,21 @@ conda env export > [ENVIRONMENT FILENAME].yml
 # What's Included
 Within the download, you will find the following directories and files:
 * Demo:
-    > .ipynb
+    * .ipynb
 * Scripts:
-    > upload_data.py
-        > Uploader via AWS SDK
-    > transfer_specific_data.py 
-        > Executable script for specific dataset to transfer to cloud
-    > transfer_bot_data.py  
-        > Executable script for datasets recorded by UFS data tracker bot to transfer to cloud
-    > get_timestamp_data.py
-        > Dataset reader from UFS data's source.   
-    > progress_bar.py
-        > Monitors uploading progress of datasets to cloud  
+    * upload_data.py
+        * Uploader via AWS SDK
+    * transfer_specific_data.py 
+        * Executable script for specific dataset to transfer to cloud
+    * transfer_bot_data.py  
+        * Executable script for datasets recorded by UFS data tracker bot to transfer to cloud
+    * get_timestamp_data.py
+        * Dataset reader from UFS data's source.   
+    * progress_bar.py
+        * Monitors uploading progress of datasets to cloud  
 
 * List of Dependencies: 
-    > cloud_xfer_env.yml
+    * cloud_xfer_env.yml
 
 # Documentation
 
