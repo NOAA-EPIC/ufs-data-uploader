@@ -152,9 +152,17 @@ Within the download, you will find the following directories and files:
 * Demo:
     > .ipynb
 * Scripts:
-    > .py
-    > .py
-    > .py
+    > upload_data.py
+        > Uploader via AWS SDK
+    > transfer_specific_data.py 
+        > Executable script for specific dataset to transfer to cloud
+    > transfer_bot_data.py  
+        > Executable script for datasets recorded by UFS data tracker bot to transfer to cloud
+    > get_timestamp_data.py
+        > Dataset reader from UFS data's source.   
+    > progress_bar.py
+        > Monitors uploading progress of datasets to cloud  
+
 * List of Dependencies: 
     > cloud_xfer_env.yml
 
