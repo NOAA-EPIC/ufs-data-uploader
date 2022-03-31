@@ -153,7 +153,7 @@ conda env export > [ENVIRONMENT FILENAME].yml
 # What's Included
 Within the download, you will find the following directories and files:
 * Demo:
-    * .ipynb
+    * data_xfer2cloud_scripts_demo.ipynb
 * Scripts:
     * upload_data.py
         * Uploader via AWS SDK
@@ -170,9 +170,7 @@ Within the download, you will find the following directories and files:
     * cloud_xfer_env.yml
 
 # Documentation
-
-# References
-* N/A
+* Refer to data_xfer2cloud_scripts_demo.ipynb
 
 # Version:
-* Draft as of 03/29/22
+* Draft as of 03/30/22
