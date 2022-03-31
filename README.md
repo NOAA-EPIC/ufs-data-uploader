@@ -68,6 +68,8 @@ The program can be used as a skeletal framework for transferring future datasets
 # Prerequisites
 * Python 3.9
 * Setting up AWS CLI configurations for uploading to Cloud.
+* Setting up conda environment w/in RDHPCS.
+    > Refer to [Environment Setup](#Environment-Setup)
 
 # Dataset
 * N/A
