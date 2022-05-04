@@ -56,6 +56,10 @@ class UploadData():
         begins to establish an experimental directory for the transferring of UFS data
         files from and to the RDHPCS on-prem disk and user's experimental directory, respectively.
         
+        Note: The callback script, ProgressPercentage, will calculate each file size in powers
+        of 1000 rather than 1024. The file size displayed from S3 cloud storage bucket will 
+        calculate each file size in powers of 1024.
+        
         **TODO** If utilizing Jupyter Notebook, set NotebookApp.iopub_data_rate_limit=1.0e10 w/in 
         the configuration file: "/.jupyter/jupyter_notebook_config.py"
 
@@ -216,4 +220,64 @@ class UploadData():
         """
         s3.Object(self.bucket_name, key_path).delete()
 
+        return
+    
+    def purge_by_keyprefix(self, key_prefix):
+        """
+        Remove data file object w/ the given key prefix from cloud data storage.
+        
+        Args:
+            key_prefix (str): Key's prefix of the data objects to delete w/in
+                              cloud data storage.
+            
+        Return: None
+
+        """
+        
+        objects = s3.Bucket(self.bucket_name).objects.filter(Prefix=key_prefix)
+        for ob in objects:
+            print(ob)
+        objects.delete()
+        print(f"\nCompleted: {key_prefix} prefixed Objects have been deleted")
+        return
+    
+    def get_all_s3_keys(self):
+        """
+        Extract all data file object keys w/ from cloud data storage.
+        
+        Args:
+            None
+            
+        Return (list): List of all objects within the bucket of interest.
+
+        """
+        
+        # Instantiate bucket of interest.
+        bucket_ob = s3.Bucket(self.bucket_name)
+        keys = []
+        for obj in bucket_ob.objects.all():
+            keys.append(obj.key)
+        keys.sort()    
+        
+        return keys
+    
+    def rename_s3_keys(self, source_key_path, new_key_path):
+        """
+        'Rename' an existing object's key.
+        
+        Args:
+            source_key_path (str): Key of the existing object.
+            new_key_path (str): New key to set for the existing object.
+            
+        Return (list): List of all objects within the bucket of interest.
+
+        """
+            
+        # Set original object with new object key.
+        s3.Object(self.bucket_name, new_key_path).copy_from(CopySource=source_key_path)
+        
+        # Delete the orginal object.
+        s3.Object(self.bucket_name, source_key_path).delete()
+        print(f"The object's key, {source_key_path}, has been renamed to: {new_key_path}")
+            
         return
