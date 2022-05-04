@@ -20,7 +20,7 @@ Data Uploader for
 
 __Purpose:__
 
-The purpose of this program is to transfer the input and baseline datasets residing within the RDHPCS to cloud data storage via chaining API calls to communicate with cloud data storage buckets. The program will support the data required for the current UFS-WM deployed within the CSPs as well as support the NOAA development team's data management in maintaining only the datasets committed within the latest N months of their UFS development code (once the program is integrated into Jenkins).
+The purpose of this program is to transfer the input and baseline datasets residing within the RDHPCS to cloud data storage via chaining API calls to communicate with cloud data storage buckets. The program will support the data required for the current UFS-WM deployed within the RDHPCS as well as support the NOAA development team's data management in maintaining only the datasets committed within the latest N months of their UFS development code (once the program is integrated into Jenkins).
 
 According to Amazon AWS, the following conditions need to be considered when transferring data to cloud data storage:
 
@@ -48,7 +48,7 @@ __Capabilities:__
 
 This script will be able to perform the following actions:
 
-Apply multi-threading & partitioning to the datasets to assist in the optimization in uploading performance of the datasets from on-prem to cloud.
+Multi-threading & partitioning to the datasets to assist in the optimization in uploading performance of the datasets from on-prem to cloud.
 
 
 __Future Capabilities:__
@@ -162,7 +162,7 @@ Within the download, you will find the following directories and files:
     * transfer_bot_data.py  
         * Executable script for datasets recorded by UFS data tracker bot to transfer to cloud
     * get_timestamp_data.py
-        * Dataset reader from UFS data's source.   
+        * Dataset reader from UFS data's source
     * progress_bar.py
         * Monitors uploading progress of datasets to cloud  
 
