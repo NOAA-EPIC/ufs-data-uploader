@@ -2,13 +2,14 @@
 import boto3
 from boto3.s3.transfer import TransferConfig
 import botocore
-s3 = boto3.resource('s3')
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from pathlib import Path
 import time
 from progress_bar import ProgressPercentage
+session = boto3.Session(profile_name='default')
+s3 = session.resource('s3')
 
 
 class UploadData():
