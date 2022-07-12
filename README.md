@@ -37,7 +37,7 @@ Tools which could be be utilized to perform data transferring & partitioning (Mu
 
 All of the AWS provided tools are built on Boto3.
 
-In this demontration, the framework will implement Python AWS SDK for transferring the UFS datasets from the RDHPCS, Orion, to the cloud data storage with low latency.
+In this demonstration, the framework will implement Python AWS SDK for transferring the UFS datasets from the RDHPCS, Orion, to the cloud data storage with low latency.
 
 The AWS SDK will be implemented for the following reasons:
 
