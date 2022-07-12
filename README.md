@@ -41,8 +41,8 @@ In this demonstration, the framework will implement Python AWS SDK for transferr
 
 The AWS SDK will be implemented for the following reasons:
 
-To integrate with other python scripts.
-AWS SDK carries addition capabilities/features for data manipulation & transferring compare to the aforementioned alternate tools.
+* To integrate with other python scripts.
+* AWS SDK carries addition capabilities/features for data manipulation & transferring compare to the aforementioned alternate tools.
 
 __Capabilities:__
 
